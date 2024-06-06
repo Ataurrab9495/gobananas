@@ -44,7 +44,7 @@ const Sidebar = () => {
             </IconButton>
           )}
           <Typography variant="h6" noWrap>
-            Responsive Sidebar
+            Basic Nav
           </Typography>
         </Toolbar>
       </AppBar>
