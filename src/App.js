@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import { Box, CssBaseline, Toolbar } from '@mui/material';
+import Sidebar from './components/Sidebar';
+import Content from './components/Content';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <Router>
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100%' }}>
+        <CssBaseline />
+        <Sidebar />
+        <Box
+          component="main"
+          sx={{
+            display: 'flex',
+            flexGrow: 1,
+            p: 3,
+            ml: { sm: '240px' },
+            mt: '64px', // Height of the AppBar
+            width: { sm: 'calc(100% - 240px)', xs: '100%' },
+            overflowX: 'hidden'
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Toolbar />
+          <Content />
+        </Box>
+      </Box>
+    </Router>
   );
-}
+};
 
 export default App;
